@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-box">
+            <div class="header">
+                <h1>Your Tasks</h1>
+                <p id="welcomeMessage">Welcome back!</p>
+                <div class="settings-menu">
+                    <button id="settingsBtn" class="settings-btn"><i class="fas fa-cog"></i></button>
+                    <div id="settingsDropdown" class="settings-dropdown">
+                        <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                        <button id="deleteAccountBtn"><i class="fas fa-user-slash"></i> Delete Account</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-summary">
+                <div class="summary-item">
+                    <span class="count" id="totalTasks">0</span>
+                    <span class="label">Total Tasks</span>
+                </div>
+                <div class="summary-item">
+                    <span class="count" id="completedTasks">0</span>
+                    <span class="label">Completed</span>
+                </div>
+                <div class="summary-item">
+                    <span class="count" id="pendingTasks">0</span>
+                    <span class="label">Pending</span>
+                </div>
+            </div>
+
+            <div class="task-list" id="taskList">
+                <!-- Tasks will be added here dynamically -->
+            </div>
+
+            <div class="add-task">
+                <form id="taskForm">
+                    <div class="input-group">
+                        <input type="text" id="newTask" placeholder="Add a new task..." required>
+                        <button type="button" class="add-button" id="showConfirmBtn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button type="submit" class="confirm-button" id="confirmAddBtn" style="display:none;">
+                            Confirm
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bulk-add">
+                <button id="bulkAddBtn" class="bulk-button">
+                    <i class="fas fa-plus-circle"></i> Add Multiple Tasks
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for adding multiple tasks -->
+    <div id="bulkModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBulkModal">&times;</span>
+            <h2>Add Multiple Tasks</h2>
+            <textarea id="bulkTasksInput" placeholder="Enter each task on a new line..."></textarea>
+            <button id="addBulkTasksBtn" class="confirm-button" style="margin-top: 16px;">Add Tasks</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="todo.js"></script>
+</body>
+</html> 
