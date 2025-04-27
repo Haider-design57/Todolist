@@ -17,11 +17,12 @@ body {
 .container {
     width: 100%;
     max-width: 600px;
+    padding: 0 15px;
 }
 
 .todo-box {
     background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
@@ -29,61 +30,64 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
 }
 
 .header h1 {
     color: #333;
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
 .header p {
     color: #666;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .task-summary {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background: #f8f9fa;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .summary-item {
     text-align: center;
     flex: 1;
+    min-width: 100px;
 }
 
 .count {
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: #667eea;
     margin-bottom: 5px;
 }
 
 .label {
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
 }
 
 .task-list {
-    margin-bottom: 30px;
-    max-height: 400px;
+    margin-bottom: 20px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
 .task-item {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 12px;
     background: #f8f9fa;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: all 0.3s ease;
 }
 
@@ -97,28 +101,29 @@ body {
 }
 
 .task-checkbox {
-    margin-right: 15px;
-    width: 20px;
-    height: 20px;
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
 }
 
 .task-text {
     flex: 1;
     color: #333;
-    font-size: 16px;
+    font-size: 14px;
+    word-break: break-word;
 }
 
 .task-actions {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .task-actions button {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
     transition: color 0.3s ease;
 }
@@ -132,20 +137,20 @@ body {
 }
 
 .add-task {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .input-group {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .input-group input {
     flex: 1;
-    padding: 15px;
+    padding: 12px;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     transition: all 0.3s ease;
 }
 
@@ -154,28 +159,33 @@ body {
     outline: none;
 }
 
-.add-button {
+.add-button, .confirm-button {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    width: 50px;
     border-radius: 10px;
+    padding: 0 15px;
+    font-size: 14px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.add-button:hover {
-    transform: translateY(-2px);
+.add-button {
+    width: 42px;
 }
 
 .bulk-button {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     background: #f8f9fa;
     border: 2px dashed #667eea;
     border-radius: 10px;
     color: #667eea;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -207,68 +217,39 @@ body {
 /* Settings menu styles */
 .settings-menu {
     position: absolute;
-    top: 30px;
-    right: 40px;
-    z-index: 10;
+    top: 20px;
+    right: 20px;
 }
 .settings-btn {
     background: none;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
     color: #667eea;
     cursor: pointer;
-    transition: color 0.3s;
-}
-.settings-btn:hover {
-    color: #764ba2;
 }
 .settings-dropdown {
     display: none;
     position: absolute;
     right: 0;
-    top: 35px;
-    background: #fff;
+    top: 30px;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    min-width: 160px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
     padding: 10px 0;
-    flex-direction: column;
-    gap: 0;
 }
 .settings-dropdown button {
     width: 100%;
+    padding: 10px 15px;
+    text-align: left;
     background: none;
     border: none;
     color: #333;
-    font-size: 16px;
-    padding: 12px 20px;
-    text-align: left;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.3s;
 }
 .settings-dropdown button:hover {
-    background: #f3f3f3;
-    color: #667eea;
-}
-
-/* Confirm button styles */
-.confirm-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 0 18px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin-left: 5px;
-    display: flex;
-    align-items: center;
-    height: 48px;
-}
-.confirm-button:hover {
-    transform: translateY(-2px);
+    background: #f5f5f5;
 }
 
 /* Modal styles */
@@ -278,52 +259,110 @@ body {
     z-index: 1000;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: auto;
-    background: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
+    padding: 15px;
 }
 .modal-content {
     background: #fff;
-    margin: auto;
-    padding: 30px 30px 20px 30px;
-    border-radius: 16px;
+    padding: 20px;
+    border-radius: 15px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
 }
 .close {
-    color: #aaa;
     position: absolute;
-    top: 18px;
-    right: 24px;
-    font-size: 28px;
-    font-weight: bold;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #666;
     cursor: pointer;
-    transition: color 0.2s;
-}
-.close:hover {
-    color: #667eea;
 }
 #bulkTasksInput {
     width: 100%;
-    min-height: 120px;
+    min-height: 100px;
+    padding: 10px;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
-    padding: 12px;
-    font-size: 16px;
-    margin-top: 12px;
+    margin: 15px 0;
     resize: vertical;
-    font-family: 'Poppins', sans-serif;
-    transition: border 0.3s;
 }
-#bulkTasksInput:focus {
-    border-color: #667eea;
-    outline: none;
+
+/* Media Queries */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .todo-box {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .task-summary {
+        padding: 10px;
+    }
+
+    .summary-item {
+        min-width: 80px;
+    }
+
+    .count {
+        font-size: 18px;
+    }
+
+    .task-item {
+        padding: 10px;
+    }
+
+    .task-text {
+        font-size: 13px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .add-button, .confirm-button {
+        height: 38px;
+        font-size: 13px;
+    }
+
+    .add-button {
+        width: 38px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    #bulkTasksInput {
+        min-height: 80px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .count {
+        font-size: 16px;
+    }
+
+    .label {
+        font-size: 11px;
+    }
+
+    .task-text {
+        font-size: 12px;
+    }
 }
